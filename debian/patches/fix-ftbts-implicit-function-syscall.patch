@@ -1,0 +1,17 @@
+Description: Fix FTBTS problem: implicit declaration of function 'syscall'
+Author: Shengqi Chen <harry-chen@outlook.com>
+Forwarded: not-needed
+Last-Update: 2024-09-05
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -316,6 +316,8 @@
+   ENDIF()
+ ELSE()
+   TARGET_COMPILE_DEFINITIONS(cpuinfo INTERFACE CPUINFO_SUPPORTED_PLATFORM=0)
++  TARGET_COMPILE_DEFINITIONS(cpuinfo PRIVATE _GNU_SOURCE=1)
++  TARGET_COMPILE_DEFINITIONS(cpuinfo_internals PRIVATE _GNU_SOURCE=1)
+ ENDIF()
+ 
+ ADD_LIBRARY(${PROJECT_NAME}::cpuinfo ALIAS cpuinfo)

@@ -1,0 +1,20 @@
+Test-Command: /usr/bin/cache-info
+Features: test-name=cache-info
+Architecture: amd64 i386 x32 arm64 armel armhf
+Restrictions: allow-stderr
+
+Test-Command: /usr/bin/cpu-info
+Features: test-name=cpu-info
+Architecture: amd64 i386 x32 arm64 armel armhf
+Restrictions: allow-stderr
+
+Test-Command: /usr/bin/isa-info
+Features: test-name=isa-info
+Architecture: amd64 i386 x32 arm64 armel armhf
+Restrictions: allow-stderr
+
+Test-Command: /usr/bin/cpuid-dump
+Features: test-name=cpuid-dump-x86
+Architecture: amd64 i386 x32
+Restrictions: allow-stderr
+
