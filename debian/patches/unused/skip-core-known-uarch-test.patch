@@ -1,0 +1,16 @@
+Author: Shengqi Chen <harry@debian.org>
+Description: skip the Core.known_uarch test from init-test.
+ It fails on P+E core intel CPUs, solely because upstream has
+ not added the code for these architectures.
+Forwarded: not-needed
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -813,7 +813,7 @@
+   CPUINFO_TARGET_ENABLE_CXX11(init-test)
+   CPUINFO_TARGET_RUNTIME_LIBRARY(init-test)
+   TARGET_LINK_LIBRARIES(init-test PRIVATE cpuinfo gtest gtest_main)
+-  ADD_TEST(NAME init-test COMMAND init-test)
++  ADD_TEST(NAME init-test COMMAND init-test --gtest_filter=-CORE.known_uarch)
+ 
+   IF(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "Android")
+     ADD_EXECUTABLE(get-current-test test/get-current.cc)

@@ -1,0 +1,4 @@
+usr/include/cpuinfo.h
+usr/lib/*/libcpuinfo.so
+usr/lib/*/pkgconfig/libcpuinfo.pc
+usr/lib/*/cmake/cpuinfo

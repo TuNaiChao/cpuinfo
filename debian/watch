@@ -1,0 +1,7 @@
+Version: 5
+
+Source: https://github.com/pytorch/cpuinfo
+Matching-Pattern: HEAD
+Mode: git
+Pgpmode: none
+Update-Script: uupdate

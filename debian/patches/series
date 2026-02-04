@@ -1,0 +1,4 @@
+cmake-soversion.patch
+Fix-cmake-config-install.patch
+# unused/skip-core-known-uarch-test.patch
+fix-ftbts-implicit-function-syscall.patch
